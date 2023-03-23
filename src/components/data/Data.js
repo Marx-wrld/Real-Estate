@@ -136,7 +136,7 @@ export const location = [
     Villas: "12 Villas",
     Apartments: "10 Apartments",
     Offices: "07 Offices",
-    cover: "./images/location/city-1.png",
+    cover: "../images/location/city-1.png",
   },
   {
     id: 2,
@@ -144,7 +144,7 @@ export const location = [
     Villas: "12 Villas",
     Apartments: "10 Apartments",
     Offices: "07 Offices",
-    cover: "./images/location/city-2.png",
+    cover: "../images/location/city-2.png",
   },
   {
     id: 3,
@@ -152,7 +152,7 @@ export const location = [
     Villas: "12 Villas",
     Apartments: " 10 Apartments",
     Offices: "07 Offices",
-    cover: "./images/location/city-3.png",
+    cover: "../images/location/city-3.png",
   },
   {
     id: 4,
@@ -160,7 +160,7 @@ export const location = [
     Villas: "12 Villas",
     Apartments: " 10 Apartments",
     Offices: "07 Offices",
-    cover: "./images/location/city-4.png",
+    cover: "../images/location/city-4.png",
   },
   {
     id: 5,
@@ -168,7 +168,7 @@ export const location = [
     Villas: "12 Villas",
     Apartments: " 10 Apartments",
     Offices: "07 Offices",
-    cover: "./images/location/city-5.png",
+    cover: "../images/location/city-5.png",
   },
   {
     id: 6,
@@ -176,7 +176,7 @@ export const location = [
     Villas: "12 Villas",
     Apartments: " 10 Apartments",
     Offices: "07 Offices",
-    cover: "./images/location/city-6.png",
+    cover: "../images/location/city-6.png",
   },
 ]
 export const team = [
@@ -197,7 +197,7 @@ export const team = [
   {
     list: "80",
     cover: "../images/customer/team-3.jpg",
-    address: "Denever, USA",
+    address: "Denver, USA",
     name: "Anna K. Young",
     icon: [<i class='fa-brands fa-facebook-f'></i>, <i class='fa-brands fa-linkedin'></i>, <i class='fa-brands fa-twitter'></i>, <i class='fa-brands fa-instagram'></i>],
   },
@@ -227,7 +227,7 @@ export const price = [
   {
     plan: "Basic",
     price: "29",
-    ptext: "per user, per month",
+    ptext: "Per user, Per month",
     list: [
       {
         icon: <i class='fa-solid fa-check'></i>,
@@ -249,7 +249,7 @@ export const price = [
     best: "Best Value",
     plan: "Standard",
     price: "49",
-    ptext: "per user, per month",
+    ptext: "Per user, Per month",
     list: [
       {
         icon: <i class='fa-solid fa-check'></i>,
@@ -277,7 +277,7 @@ export const price = [
   {
     plan: "Platinum",
     price: "79",
-    ptext: "2 user, per month",
+    ptext: "2 users, Per month",
     list: [
       {
         icon: <i class='fa-solid fa-check'></i>,
