@@ -26,27 +26,27 @@ export const nav = [
 ]
 export const featured = [
   {
-    cover: "/src/components/images/hero/h1.png",
+    cover: "../images/hero/h1.png",
     name: "Family House",
     total: "122 Property",
   },
   {
-    cover: "/src/components/images/hero/h2.png",
+    cover: "../images/hero/h2.png",
     name: "House & Villa",
     total: "155 Property",
   },
   {
-    cover: "/src/components/images/hero/h3.png",
+    cover: "../images/hero/h3.png",
     name: "Apartment",
     total: "300 Property",
   },
   {
-    cover: "/src/components/images/hero/h4.png",
+    cover: "../images/hero/h4.png",
     name: "Office & Studio",
     total: "80 Property",
   },
   {
-    cover: "/src/components/images/hero/h5.png",
+    cover: "../images/hero/h5.png",
     name: "Villa & Condo",
     total: "80 Property",
   },
@@ -230,7 +230,7 @@ export const price = [
     ptext: "Per user, Per month",
     list: [
       {
-        icon: <i class='fa-solid fa-check'></i>,
+        icon: <i class="fa-solid fa-check"></i>,
         text: "99.5% Uptime Guarantee",
       },
       {
@@ -241,8 +241,8 @@ export const price = [
         icon: <i class='fa-solid fa-check'></i>,
         text: "5GB Cloud Storage",
       },
-      { change: "color", icon: <i class='fa-solid fa-x'></i>, text: "Personal Help Support" },
-      { change: "color", icon: <i class='fa-solid fa-x'></i>, text: "Enterprise SLA" },
+      { change: "color", icon: <i class="fa-solid fa-x"></i>, text: "Personal Help Support" },
+      { change: "color", icon: <i class="fa-solid fa-x"></i>, text: "Enterprise SLA" },
     ],
   },
   {
@@ -252,24 +252,24 @@ export const price = [
     ptext: "Per user, Per month",
     list: [
       {
-        icon: <i class='fa-solid fa-check'></i>,
+        icon: <i class="fa-solid fa-check"></i>,
         text: "99.5% Uptime Guarantee",
       },
       {
-        icon: <i class='fa-solid fa-check'></i>,
+        icon: <i class="fa-solid fa-check"></i>,
         text: "150GB CDN Bandwidth",
       },
       {
-        icon: <i class='fa-solid fa-check'></i>,
+        icon: <i class="fa-solid fa-check"></i>,
         text: "10GB Cloud Storage",
       },
       {
-        icon: <i class='fa-solid fa-check'></i>,
+        icon: <i class="fa-solid fa-check"></i>,
         text: "Personal Help Support",
       },
       {
         change: "color",
-        icon: <i class='fa-solid fa-x'></i>,
+        icon: <i class="fa-solid fa-x"></i>,
         text: "Enterprise SLA",
       },
     ],
