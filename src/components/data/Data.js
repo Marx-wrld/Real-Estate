@@ -26,27 +26,27 @@ export const nav = [
 ]
 export const featured = [
   {
-    cover: "../images/h1.png",
+    cover: "../images/hero/h1.png",
     name: "Family House",
     total: "122 Property",
   },
   {
-    cover: "../images/h2.png",
+    cover: "../images/hero/h2.png",
     name: "House & Villa",
     total: "155 Property",
   },
   {
-    cover: "../images/h3.png",
+    cover: "../images/hero/h3.png",
     name: "Apartment",
     total: "300 Property",
   },
   {
-    cover: "../images/h4.png",
+    cover: "../images/hero/h4.png",
     name: "Office & Studio",
     total: "80 Property",
   },
   {
-    cover: "../images/hero/h6.png",
+    cover: "../images/hero/h5.png",
     name: "Villa & Condo",
     total: "80 Property",
   },
@@ -72,7 +72,7 @@ export const list = [
   },
   {
     id: 3,
-    cover: "../images/list/p-7.png",
+    cover: "../images/list/p-3.png",
     name: "The Real Estate Corner",
     location: "5624 Mooker Market, USA",
     category: "For Rent",

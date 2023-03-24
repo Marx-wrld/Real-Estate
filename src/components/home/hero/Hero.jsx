@@ -12,20 +12,20 @@ const Hero = () => {
           <form className='flex'>
             <div className='box'>
               <span>City/Street</span>
-              <input type='text' placeholder='Location' />
+              <input type='text' placeholder='' />
             </div>
             <div className='box'>
               <span>Property Type</span>
-              <input type='text' placeholder='Property Type' />
+              <input type='text' placeholder='' />
             </div>
             <div className='box'>
               <span>Price Range</span>
-              <input type='text' placeholder='Price Range' />
+              <input type='text' placeholder='' />
             </div>
             <div className='box'>
               <h4>Advance Filter</h4>
             </div>
-            <button className='btn1'>
+            <button className='btn1'> Search
               <i className='fa fa-search'></i>
             </button>
           </form>
