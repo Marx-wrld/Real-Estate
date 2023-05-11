@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import { HiHomeModern } from "react-icons/hi2";
 import Link from "next/link";
 import {navigationLinks} from "../../navigationConsts";
@@ -24,6 +24,7 @@ const NavigationDesktop = () => {
           {navigationLinks.map((item) => (
             <NavigationLink key={item.title} {...item}/>
           ))}
+          <Button padding="1.5rem" colorScheme="twitter" fontSize="0.8rem" fontWeight='medium'>CREATE LISTING</Button>
         </Flex>
       </Box>
     </Box>
