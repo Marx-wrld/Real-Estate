@@ -1,8 +1,9 @@
+import Navigation from "@/features/common/modules/Navigation/Navigation";
 
 export default function Home() {
   return (
     <>
-      <h1>Hello World !</h1>
+      <Navigation />
     </>
   )
 }
