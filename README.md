@@ -1,2 +1,2 @@
 # Real-Estate-App
-This project is a simple front-end real estate app using React js
+A real estate application built in React.js, chakra-ui and axios for apis.
