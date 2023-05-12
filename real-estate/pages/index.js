@@ -1,11 +1,11 @@
-import Navigation from "@/features/common/modules/Navigation/Navigation";
-import Footer from "@/features/common/modules/Footer/Footer"
+import DefaultLayout from "@/features/Layouts/DefaultLayout/DefaultLayout";
 
 export default function Home() {
   return (
     <>
-      <Navigation />
-      <Footer />
+      <DefaultLayout>
+        Github @Marx-wrld
+      </DefaultLayout>
     </>
   )
 }
