@@ -1,7 +1,7 @@
 import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import { HiHomeModern } from "react-icons/hi2";
 import Link from "next/link";
-import {navigationLinks} from "../../navigationConsts";
+import { navigationLinks } from "../../navigationConsts";
 
 const NavigationDesktop = () => {
   return (
@@ -21,12 +21,20 @@ const NavigationDesktop = () => {
               </Text>
             </Box>
           </Link>
-          <Flex gap="12" alignItems='center' fontWeight='medium'>
-          {navigationLinks.map((item) => (
-            <NavigationLink key={item.title} {...item}/>
-          ))}
-          <Button padding="1.5rem" colorScheme="twitter" fontSize="0.8rem" fontWeight='medium'>CREATE LISTING</Button>
-          </Flex>
+          <Flex gap="12" alignItems="center" fontWeight="medium">
+            {navigationLinks.map((item) => (
+              <NavigationLink key={item.title} {...item} />
+            ))}
+            <Button
+              padding="1.5rem"
+              colorScheme='twitter'
+              size="md"
+              fontSize="0.8rem"
+              fontWeight="medium"
+            >
+              CREATE LISTING
+            </Button>
+        </Flex>
         </Flex>
       </Box>
     </Box>
@@ -35,13 +43,13 @@ const NavigationDesktop = () => {
 export default NavigationDesktop;
 
 //custom component
-const NavigationLink = ({title, link, icon}) => {
-    return (
+const NavigationLink = ({ title, link, icon }) => {
+  return (
     <Link href={link}>
-    <Flex alignItems="center" gap="0.5rem">
+      <Flex alignItems="center" gap="0.5rem">
         {icon}
-        {title}        
-    </Flex>
+        {title}
+      </Flex>
     </Link>
-    )
-}
+  );
+};
