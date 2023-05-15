@@ -40,10 +40,11 @@ const HeroBanner = () => {
               lineHeight="shorter"
               marginBottom="1.5rem"
             >
-              Download Our New <strong>Property Guide</strong>
+              Download Our New <strong>Property Guide...</strong>
             </Text>
+            <Text fontSize={{base:'lg', sm: "xl"}}>A Free PDF without Best Secrets for Evaluating a Property purchase, Calculating profit and so much more.</Text>
           </Box>
-          <Box width={{ base: "100%", sm: "auto" }}><HeroForm /></Box>
+          <Box width={{ base: "100%", sm: "auto" }} marginTop={{base:'2rem', sm:'0'}}><HeroForm /></Box>
         </Box>
       </Box>
     </Fade>
