@@ -14,7 +14,7 @@ const PropertySlider = ({featuredProperties}) => {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
         >
-        {props.featuredProperties.map((property) => {
+        {featuredProperties.map((property) => {
             <SwiperSlide key={property.id}>
                 <PropertyCard {...property}/>
             </SwiperSlide>
