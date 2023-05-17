@@ -21,11 +21,13 @@ const PropertySlider = ({ featuredProperties }) => {
             modules={[Autoplay, Pagination]}
             className="mySwiper"
         >
-            {featuredProperties.map((property) => {
+            {featuredProperties.map((property) => (
                 <SwiperSlide key={property.id}>
-                    <PropertyCard {...property} />
+                    <PropertyCard {...property}
+                    //we going to pass an individual property into each card because we are mapping over our featuredProperties.
+                    />
                 </SwiperSlide>
-            })}
+            ))}
         </Swiper>
     );
 }
