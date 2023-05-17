@@ -55,7 +55,7 @@ const HeroForm = () => {
           
           <Checkbox marginTop="1.3rem" id="gdpr" type="checkbox" placeholder="GDPR" {...register('gdpr', { required: true })} 
           >
-          I consent to having this webiste store my submitted info
+          I consent to having this webiste store my info.
           </Checkbox>
           {errors.gdpr && (<Text fontSize="xs" color="red.400">{errors.gdpr.type}</Text>)}
         </FormControl>
