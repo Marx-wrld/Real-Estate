@@ -20,9 +20,11 @@ const HeroForm = () => {
       <Text fontSize="xl" fontWeight="bold">
         Free PDF Guide
       </Text>
-      <Text fontSize="lg">Complete the Form below to Download Our Guide</Text>
+      <Text fontSize="lg">
+        Complete the Form below to Download Our Guide
+      </Text>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} autoComplete="on">
         <FormControl>
           <Input
             marginTop="1.3rem"

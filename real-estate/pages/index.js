@@ -4,18 +4,16 @@ import FeaturedProperties from "@/features/Home/components/FeaturedProperties/Fe
 
 export default function Home({featuredProperties}) {
   return (
-    <>
       <DefaultLayout>
         <HeroBanner />
         <FeaturedProperties featuredProperties={featuredProperties}/>
       </DefaultLayout>
-    </>
-  )
-}
+  );
+};
 
 export async function getStaticProps(){
   const {hits} = require('@/features/data/properties');
   return {
-    props: {featuredProperties: hits}
-  }
-}
+    props: {featuredProperties: hits.slice(0, 5)}
+  };
+};

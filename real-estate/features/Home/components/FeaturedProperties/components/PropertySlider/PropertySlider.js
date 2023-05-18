@@ -13,10 +13,8 @@ const PropertySlider = ({ featuredProperties }) => {
             slidesPerView={3} 
             spaceBetween={10} 
             loop={true} 
-            // loopFillGroupWithBlank={true}
-            autoplay={{ delay: 2000, 
-            disableOnInteraction: true 
-        }}
+            loopFillGroupWithBlank={true}
+            autoplay={{ delay: 2000, disableOnInteraction: true}}
             pagination={{ dynamicBullets: true }}
             modules={[Autoplay, Pagination]}
             className="mySwiper"
