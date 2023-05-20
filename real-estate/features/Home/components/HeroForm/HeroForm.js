@@ -5,7 +5,7 @@ const HeroForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors } 
   } = useForm();
 
   const onSubmit = (data) => console.log(data);
@@ -33,7 +33,10 @@ const HeroForm = () => {
             placeholder="Name"
             {...register("name", { required: true })}
           />
-          {errors.name && (<Text fontSize="xs" color="red.400">{errors.name.type}</Text>)}
+          {errors.name && (
+          <Text fontSize="xs" color="red.400">
+          {errors.name.type}
+          </Text>)}
 
           <Flex gap={{ base: "0", sm: '1rem' }} flexDirection={{ base: 'column', sm: 'row' }}>
             <Input
@@ -43,7 +46,10 @@ const HeroForm = () => {
               placeholder="Email"
               {...register("email", { required: true })}
             />
-            {errors.email && (<Text fontSize="xs" color="red.400">{errors.email.type}</Text>)}
+            {errors.email && (
+            <Text fontSize="xs" color="red.400">
+              {errors.email.type}
+            </Text>)}
 
             <Input
               marginTop="1.3rem"
@@ -52,14 +58,23 @@ const HeroForm = () => {
               placeholder="Phone"
               {...register("phone", { required: true })}
             />
-            {errors.phone && (<Text fontSize="xs" color="red.400">{errors.phone.type}</Text>)}
+            {errors.phone && (
+            <Text fontSize="xs" color="red.400">
+              {errors.phone.type}
+              </Text>
+            )}
           </Flex>
           
           <Checkbox marginTop="1.3rem" id="gdpr" type="checkbox" placeholder="GDPR" {...register('gdpr', { required: true })} 
           >
           I consent to having this webiste store my info.
           </Checkbox>
-          {errors.gdpr && (<Text fontSize="xs" color="red.400">{errors.gdpr.type}</Text>)}
+          
+          {errors.gdpr && (
+          <Text fontSize="xs" color="red.400">
+          {errors.gdpr.type}
+          </Text>)}
+
         </FormControl>
         <Button type="submit" colorScheme="blue" width="100%" fontSize="xl" padding='2rem' marginTop="2rem">
           Download Now

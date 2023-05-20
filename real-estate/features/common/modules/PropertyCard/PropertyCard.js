@@ -1,4 +1,5 @@
-import { Badge, Box, Flex, HStack, Text, Link } from "@chakra-ui/react";
+import { Badge, Box, Flex, HStack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { usePropertyFormat } from "../../Hooks/usePropertyFormat";
 import {TbBed, TbBath, TbRuler} from "react-icons/tb";
 
@@ -19,7 +20,7 @@ const PropertyCard = (property) => {
 
     return (
         <Box marginBottom='4rem' backgroundColor='#fff'>
-            <Link href={`/properties/$(externalID)`}>
+            <Link href={`/properties/${externalID}`}>
             <Box 
                 backgroundImage={`url("${coverPhoto}")`} 
                 height="250px" 
@@ -41,9 +42,12 @@ const PropertyCard = (property) => {
                 alignItems="flex-end"
                 padding="1rem"
                 >
-                    <Text fontSize="3xl" fontWeight="medium" color='whiteAlpha.800'>{price}</Text>
+                    <Text fontSize="3xl" fontWeight="medium" color='whiteAlpha.800'>
+                        {price}
+                    </Text>
                 </Box>
             </Box>
+
             <Box padding='1.5rem'>
                 <Text fontSize='xl' fontWeight="medium" marginBottom="1rem">
                     {propertyType}
