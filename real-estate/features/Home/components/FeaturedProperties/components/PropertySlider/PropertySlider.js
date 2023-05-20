@@ -3,7 +3,7 @@ import { Autoplay, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import PropertyCard from "@/features/common/modules/PropertyCard/PropertyCard";
+import PropertyCard from "@/features/common/modules/PropertyCard";
 
 const PropertySlider = ({ featuredProperties }) => {
     // console.log('Here', featuredProperties);
@@ -14,6 +14,7 @@ const PropertySlider = ({ featuredProperties }) => {
             spaceBetween={10} 
             loop={true} 
             loopFillGroupWithBlank={true}
+            centeredSlides={true}
             autoplay={{ delay: 2000, disableOnInteraction: true}}
             pagination={{ dynamicBullets: true }}
             modules={[Autoplay, Pagination]}
@@ -28,6 +29,6 @@ const PropertySlider = ({ featuredProperties }) => {
             ))}
         </Swiper>
     );
-}
+};
 
 export default PropertySlider;
