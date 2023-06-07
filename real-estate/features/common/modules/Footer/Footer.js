@@ -74,7 +74,7 @@ export default Footer;
 const FooterLink = ({ name, link }) => {
   return (
     <Text>
-      <Link href="link">{name}</Link>
+      <Link href="link">{name}{link}</Link>
     </Text>
   );
 };
