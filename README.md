@@ -9,5 +9,4 @@ A real estate application built in Next.js, React(UI), chakra-ui and axios.
 ```
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
-
 ```  
