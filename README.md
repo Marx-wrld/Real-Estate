@@ -33,7 +33,7 @@ npm i express
 ```
 node api/index.js
 ```
-#### Installing nodemon to auto restart our server incase of any changes
+#### Installing nodemon to auto-refresh our server in case of any changes
 ```
 npm i nodemon
 ```
