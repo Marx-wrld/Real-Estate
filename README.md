@@ -15,6 +15,10 @@ npx tailwindcss init -p
 ```
 npm i react-router-dom
 ```
+- React icons install
+```
+npm i react-icons
+```
 #### Building our api server
 
 - On our root folder
