@@ -37,3 +37,10 @@ node api/index.js
 ```
 npm i nodemon
 ```
+- Edit your package.json script section to this
+```
+  "scripts": {
+    "dev": "nodemon api/index.js",
+    "start": "node api/index.js"
+  },
+```
