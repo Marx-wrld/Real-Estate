@@ -29,3 +29,7 @@ npm init -y
 ```
 npm i express
 ```
+- Add "type": "module", to the package.json file in our root folder then run,
+```
+node api/index.js
+```
