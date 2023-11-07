@@ -10,3 +10,8 @@ npm i
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```  
+
+- Installing React router-dom for the web pages
+```
+npm i react-router-dom
+```
