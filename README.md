@@ -15,3 +15,13 @@ npx tailwindcss init -p
 ```
 npm i react-router-dom
 ```
+#### Building our api server
+
+- On our root folder
+```
+npm init -y
+```
+- Create an index.js file in our api folder then do,
+```
+npm i express
+```
