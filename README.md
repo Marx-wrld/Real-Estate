@@ -1,5 +1,5 @@
 # Real-Estate-App
-A real estate application built in Next.js, React(UI), chakra-ui and axios.
+A real estate application built in React(UI), MERN stack and tailwind css.
 ```
 npm create vite@latest client
 npm i
