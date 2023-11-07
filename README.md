@@ -33,3 +33,7 @@ npm i express
 ```
 node api/index.js
 ```
+#### Installing nodemon to auto restart our server incase of any changes
+```
+npm i nodemon
+```
