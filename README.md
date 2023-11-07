@@ -44,3 +44,7 @@ npm i nodemon
     "start": "node api/index.js"
   },
 ```
+- To run our server, we'll now simply do:-
+```
+npm run dev
+```
