@@ -48,3 +48,7 @@ npm i nodemon
 ```
 npm run dev
 ```
+#### Installing mongoose package
+```
+npm i mongoose
+```
