@@ -52,3 +52,7 @@ npm run dev
 ```
 npm i mongoose
 ```
+#### Installing bcryptjs for encrypting our users passwords
+```
+npm i bcryptjs
+```
