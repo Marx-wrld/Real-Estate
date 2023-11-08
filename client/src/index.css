@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: rgb(241, 232, 232);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
