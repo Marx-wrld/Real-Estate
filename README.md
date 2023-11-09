@@ -48,11 +48,15 @@ npm i nodemon
 ```
 npm run dev
 ```
-#### Installing mongoose package
+#### Installing the mongoose package for mongodb
 ```
 npm i mongoose
 ```
-#### Installing bcryptjs for encrypting our users passwords
+#### Installing bcryptjs for encrypting our users' passwords
 ```
 npm i bcryptjs
+```
+#### Installing the json web token to handle the user email and password storage
+```
+npm i jsonwebtoken
 ```
