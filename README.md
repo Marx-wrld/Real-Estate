@@ -60,3 +60,7 @@ npm i bcryptjs
 ```
 npm i jsonwebtoken
 ```
+#### Installing redux-persist which helps us store user data inside the local storage
+```
+npm i redux-persist
+```
