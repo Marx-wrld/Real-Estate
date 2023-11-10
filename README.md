@@ -64,3 +64,4 @@ npm i jsonwebtoken
 ```
 npm i redux-persist
 ```
+#### Installing Firebase 
