@@ -64,4 +64,7 @@ npm i jsonwebtoken
 ```
 npm i redux-persist
 ```
-#### Installing Firebase 
+#### Installing Firebase after setting firebase web app in our account
+```
+npm install firebase
+```
