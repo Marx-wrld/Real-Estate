@@ -64,6 +64,7 @@ npm i jsonwebtoken
 ```
 npm i redux-persist
 ```
+**You can also install the google chrome redux extension
 #### Installing Firebase after setting firebase web app in our account
 ```
 npm install firebase
