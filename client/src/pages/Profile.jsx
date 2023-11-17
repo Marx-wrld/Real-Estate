@@ -28,15 +28,15 @@ const Profile = () => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setFilePerc(Math.round(progress));
       },
-    );
     (error) => {
       setFileUploadError(true);
-    };
+    },
     ()=>{
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>{
         setFormData({ ...formData, avatar: downloadURL})
       })
     }
+    )
   };
 
   return (
