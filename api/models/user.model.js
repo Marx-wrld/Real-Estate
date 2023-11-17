@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     },
     avatar:{
         type: String,
-        default: 'https://drive.google.com/file/d/1cGwNmYYq5T2cp66f0dGra9nyYI03GnDn/view?usp=drivesdk',
+        default: 'https://drive.google.com/file/d/1cGwNmYYq5T2cp66f0dGra9nyYI03GnDn/view?usp=drive_link',
     },
     
 }, { timestamps: true });
