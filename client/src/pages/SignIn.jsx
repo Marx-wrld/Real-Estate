@@ -41,7 +41,6 @@ const SignIn = () => {
     } catch (error) {
       dispatch(signInFailure(error.message));
     }
-    
   };
 
   return (
