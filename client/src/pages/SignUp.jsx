@@ -49,9 +49,9 @@ const SignUp = () => {
       <h1 className='text-3xl text-center font-semibold m-7'>Sign Up</h1>
       
       <form onSubmit={handleSubmit} action="" className="flex flex-col gap-4">
-        <input type="text" placeholder='username' className='border p-3 rounded-lg' id='username' onChange={handleChange} required/>
-        <input type="email" placeholder='email' className='border p-3 rounded-lg' id='email' onChange={handleChange}  required/>
-        <input type="password" placeholder='password' className='border p-3 rounded-lg' id='password' onChange={handleChange}  required/>
+        <input type="text" placeholder='Username' className='border p-3 rounded-lg' id='username' onChange={handleChange} required/>
+        <input type="email" placeholder='Email' className='border p-3 rounded-lg' id='email' onChange={handleChange}  required/>
+        <input type="password" placeholder='Password' className='border p-3 rounded-lg' id='password' onChange={handleChange}  required/>
         <button className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80">{loading ? 'Loading...': 'Sign Up'}</button>
         <OAuth />
       </form>
