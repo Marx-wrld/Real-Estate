@@ -76,7 +76,7 @@ allow write: if
 request.resource.size < 2 * 1024 * 1024 &&
 request.resource.contentType.matches('image/.*')
 ```
-#### Installing cookie-parser to store and retrieve the token
+#### Installing cookie-parser to store and retrieve the user-session token
 ```
 npm i cookie-parser
 ```
