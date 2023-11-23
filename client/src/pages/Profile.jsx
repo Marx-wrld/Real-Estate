@@ -1,9 +1,24 @@
-import { useSelector } from "react-redux"
+import { useSelector } from 'react-redux';
 import { useRef, useState, useEffect } from 'react';
-import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from 'firebase/storage';
 import { app } from '../firebase';
-import { updateUserStart, updateUserSuccess, updateUserFailure, deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutUserStart, signOutUserFailure, signOutUserSuccess } from "../redux/user/userSlice";
-import { useDispatch } from "react-redux";
+import {
+  updateUserStart,
+  updateUserSuccess,
+  updateUserFailure,
+  deleteUserFailure,
+  deleteUserStart,
+  deleteUserSuccess,
+  signOutUserStart,
+  signOutUserFailure,
+  signOutUserSuccess,
+} from '../redux/user/userSlice';
+import { useDispatch } from 'react-redux';
 
 const Profile = () => {
   const fileRef = useRef(null)
@@ -15,10 +30,12 @@ const Profile = () => {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const dispatch = useDispatch();
   
+  
   useEffect(() => {
     if(file) {
       handleFileUpload(file);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [file]);
 
   const handleFileUpload = (file) => {
@@ -27,20 +44,16 @@ const Profile = () => {
     const storageRef = ref(storage, fileName);
     const uploadTask = uploadBytesResumable(storageRef, file);
 
-    uploadTask.on('state_changed', //tracks the changes and get a snapshot
-      (snapshot) => {
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        setFilePerc(Math.round(progress));
-      },
-    (error) => {
+    uploadTask.on('state_changed', (snapshot) => {
+      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      setFilePerc(Math.round(progress));
+    }, () => { //error
       setFileUploadError(true);
-    },
-    ()=>{
-      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>{
-        setFormData({ ...formData, avatar: downloadURL})
-      })
-    }
-    )
+    }, () => {
+      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+        setFormData({ ...formData, avatar: downloadURL });
+      });
+    });
   };
 
   const handleChange = (e) => {
