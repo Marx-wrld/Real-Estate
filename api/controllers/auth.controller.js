@@ -60,4 +60,12 @@ export const google = async (req, res, next) => { //Backend
     } catch (error){
         next(error)
     }
+};
+
+export const signOut = async (req, res, next) => {
+    try {
+        res.clearCookie('access_token');
+    } catch (error) {
+        next(error)
+    }
 }
