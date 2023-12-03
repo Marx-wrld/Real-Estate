@@ -1,5 +1,6 @@
 # Real-Estate
 A real estate application built in React.js(UI), redux, Firebase, MERN stack and tailwind css.
+- Cloning the project 
 ```
 npm create vite@latest client
 
