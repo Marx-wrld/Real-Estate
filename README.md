@@ -10,6 +10,7 @@ npm i
 - Installing Tailwind css
 ```
 npm install -D tailwindcss postcss autoprefixer
+
 npx tailwindcss init -p
 ```  
 
