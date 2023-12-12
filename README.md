@@ -1,6 +1,8 @@
 # Real-Estate
 A real estate application built in React.js(UI), redux, Firebase, MERN stack and tailwind css.
+
 It allow users to search for properties based on various criteria, such as location, price, and a number of bedrooms. Users can typically browse listings, view photos, and contact agents or brokers to schedule viewings.
+
 - Cloning the project 
 ```
 npm create vite@latest client
