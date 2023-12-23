@@ -15,8 +15,6 @@ import {
   deleteUserStart,
   deleteUserSuccess,
   signOutUserStart,
-  // signOutUserFailure,
-  // signOutUserSuccess,
 } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -102,25 +100,24 @@ const Profile = () => {
     }
   };
 
-  const handleSignOut = async() => {
+  const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      // const res = await fetch('/api/auth/signout');
-      // const data = await res.json();
-      // if (data.success === false) {
-      //   dispatch(deleteUserFailure(data.message));
-      //   return;
-      // }
-      // dispatch(deleteUserSuccess(data));
-
       // Clearing the access_token cookie on the client side
-      document.cookie = 'access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-      dispatch(deleteUserSuccess());
+      // document.cookie = 'access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      //dispatch(deleteUserSuccess());
+      const res = await fetch('/api/auth/signout');
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(deleteUserFailure(data.message));
+        return;
+      }
+      dispatch(deleteUserSuccess(data));
     } catch (error) {
-     dispatch(deleteUserFailure(error.message)); 
+      dispatch(deleteUserFailure(error.message));
     }
   };
-
+  
   return (
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
