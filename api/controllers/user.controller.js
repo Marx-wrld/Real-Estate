@@ -30,7 +30,7 @@ export const updateUser = async (req, res, next) => {
             }, {new: true})
 
             //separating the password from the rest
-            const {password, ...rest} = updateUser._doc
+            const {password, ...rest} = updateUser._doc;
 
             res.status(200).json(rest);
         }
