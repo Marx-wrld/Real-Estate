@@ -15,8 +15,8 @@ import {
   deleteUserStart,
   deleteUserSuccess,
   signOutUserStart,
-  signOutUserFailure,
-  signOutUserSuccess,
+  // signOutUserFailure,
+  // signOutUserSuccess,
 } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 
@@ -47,9 +47,11 @@ const Profile = () => {
     uploadTask.on('state_changed', (snapshot) => {
       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       setFilePerc(Math.round(progress));
-    }, () => { //error
+    }, 
+    (error) => {
       setFileUploadError(true);
-    }, () => {
+    }, 
+    () => {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
         setFormData({ ...formData, avatar: downloadURL });
       });
@@ -66,9 +68,8 @@ const Profile = () => {
       dispatch(updateUserStart());
       const res = await fetch(`/api/user/update/${currentUser._id}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
       //converting the data to json
       const data = await res.json();
@@ -104,17 +105,13 @@ const Profile = () => {
   const handleSignOut = async() => {
     try {
       dispatch(signOutUserStart())
-      const res = await fetch('/api/auth/signout');
-      const data = await res.json();
-      if (data.success === false) {
-        dispatch(signOutUserFailure(data.message));
-        return;
-      } //else
-      dispatch(signOutUserSuccess(data));
+      // Clear the access_token cookie on the client side
+      document.cookie = 'access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      dispatch(deleteUserSuccess());
     } catch (error) {
-     dispatch(signOutUserFailure(error.message)); 
+     dispatch(deleteUserFailure(error.message)); 
     }
-  }
+  };
 
   return (
     <div className="p-3 max-w-lg mx-auto">
