@@ -5,7 +5,7 @@ It allow users to search for properties based on various criteria, such as locat
 
 ![2023-12-23 20_38_35-](https://github.com/Marx-wrld/Real-Estate/assets/105711066/871fd9de-953e-4b67-aecc-3fb0d696d7b4)
 
-![2023-12-23 20_38_04-](https://github.com/Marx-wrld/Real-Estate/assets/105711066/11f0f046-a9da-4359-97ae-e6df7892b710)
+
 
 - Cloning the project 
 ```
