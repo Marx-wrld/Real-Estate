@@ -17,7 +17,7 @@ const CreateListing = () => {
         bedrooms: 1,
         bathrooms: 1,
         regularPrice: 50,
-        discountPrice: 50,
+        discountPrice: 0,
         offer: false,
         parking: false,
         furniture: false
@@ -128,6 +128,8 @@ const CreateListing = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            if (formData.imageUrls.length < 1) return setError('You must upload at least one image!');
+            if (+formData.regularPrice < +formData.discountPrice) return setError('Discount price must be lower than regular price!'); //using + to convert the string to number, to avoid errors
             setLoading(true);
             setError(false);
             const res = await fetch('/api/listings/create', {
@@ -209,13 +211,16 @@ const CreateListing = () => {
                                 <span className="text-xs">($ /month)</span>
                             </div>
                         </div>
+
+                        {formData.offer && (
                         <div className="flex items-center gap-2">
-                            <input type="number" id="discountPrice" min='50' max='1000000000' className="p-3 border border-gray-300 rounded-lg" required onChange={handleChange} value={formData.discountPrice} />
+                            <input type="number" id="discountPrice" min='0' max='1000000000' className="p-3 border border-gray-300 rounded-lg" required onChange={handleChange} value={formData.discountPrice} />
                             <div className="flex flex-col items-center">
                                 <p>Discounted price</p>
                                 <span className="text-xs">($ /month)</span>
                             </div>
                         </div>
+                        )}
                     </div>
                 </div>
 
@@ -236,7 +241,7 @@ const CreateListing = () => {
                             </div>
                         ))
                     }
-                    <button className="p-3 bg-slate-700 text-white rounded-lg mt-4 uppercase hover:opacity-95 disabled:opacity-80">{loading ? 'Creating...' : 'Create Listing'}</button>
+                    <button disabled={loading || uploading} className="p-3 bg-slate-700 text-white rounded-lg mt-4 uppercase hover:opacity-95 disabled:opacity-80">{loading ? 'Creating...' : 'Create Listing'}</button>
                     {error && <p className="text-red-600">{error}</p>}
                 </div>
             </form>
