@@ -6,7 +6,7 @@ import { ref } from 'firebase/storage';
 import { useSelector } from 'react-redux';
 
 const CreateListing = () => {
-    const {currentUser} = useSelector(state => state.user)
+    const { currentUser } = useSelector(state => state.user)
     const [files, setFiles] = useState([]);
     const [formData, setFormData] = useState({
         imageUrls: [],
@@ -104,52 +104,52 @@ const CreateListing = () => {
     }
 
     const handleChange = (e) => {
-       if (e.target.id === 'sale' || e.target.id === 'rent'){
-        setFormData({
-            ...formData,
-            type: e.target.id
-        });
-     }
+        if (e.target.id === 'sale' || e.target.id === 'rent') {
+            setFormData({
+                ...formData,
+                type: e.target.id,
+            });
+        }
 
-        if (e.target.id === 'parking' || e.target.id === 'furnished' || e.target.id === 'offer'){
+        if (e.target.id === 'parking' || e.target.id === 'furnished' || e.target.id === 'offer') {
             setFormData({
                 ...formData,
                 [e.target.id]: e.target.checked
             });
-     }
-        if (e.target.type === 'number' || e.target.type === 'text' || e.target.type === 'textarea'){
+        }
+        if (e.target.type === 'number' || e.target.type === 'text' || e.target.type === 'textarea') {
             setFormData({
                 ...formData,
                 [e.target.id]: e.target.value
             });
         }
-   };
+    };
 
-   const handleSubmit = async(e) => {
-    e.preventDefault();
-    try {
-        setLoading(true);
-        setError(false);
-        const res = await fetch('/api/listings/create', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                ...formData,
-                userRef: currentUser._id,
-            })
-        });
-        const data = await res.json();
-        setLoading(false);
-        if (data.success === false) {
-            setError(data.message);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            setLoading(true);
+            setError(false);
+            const res = await fetch('/api/listings/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    userRef: currentUser._id,
+                })
+            });
+            const data = await res.json();
+            setLoading(false);
+            if (data.success === false) {
+                setError(data.message);
+            }
+        } catch (error) {
+            setError(error.message);
+            setLoading(false);
         }
-    } catch (error) {
-        setError(error.message);
-        setLoading(false);
     }
-   }
 
     return (
         <main className="p-3 max-w-4xl mx-auto">
@@ -177,17 +177,17 @@ const CreateListing = () => {
                         </div>
 
                         <div className="flex gap-2">
-                            <input type="checkbox" id="parking" className="w-5" onChange={handleChange} checked={formData.type === "parking"} />
+                            <input type="checkbox" id="parking" className="w-5" onChange={handleChange} checked={formData.parking} />
                             <span>Parking spot</span>
                         </div>
 
                         <div className="flex gap-2">
-                            <input type="checkbox" onChange={handleChange} checked={formData.type === "furnished"} id="furnished" className="w-5" />
+                            <input type="checkbox" id="furnished" className="w-5" onChange={handleChange} checked={formData.furnished} />
                             <span>Furnished</span>
                         </div>
 
                         <div className="flex gap-2">
-                            <input type="checkbox" id="offer" className="w-5" onChange={handleChange} checked={formData.type === "offer"} />
+                            <input type="checkbox" id="offer" className="w-5" onChange={handleChange} checked={formData.offer} />
                             <span>Offer</span>
                         </div>
 
@@ -203,7 +203,7 @@ const CreateListing = () => {
                             <p>Baths</p>
                         </div>
                         <div className="flex items-center gap-2">
-                            <input type="number" id="regularPrice" min='50' max='1000000000' className="p-3 border border-gray-300 rounded-lg" required onChange={handleChange} value={formData.regularPrice}/>
+                            <input type="number" id="regularPrice" min='50' max='1000000000' className="p-3 border border-gray-300 rounded-lg" required onChange={handleChange} value={formData.regularPrice} />
                             <div className="flex flex-col items-center">
                                 <p>Regular price</p>
                                 <span className="text-xs">($ /month)</span>
