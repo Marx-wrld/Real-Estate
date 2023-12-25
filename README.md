@@ -7,7 +7,7 @@ It allow users to search for properties based on various criteria, such as locat
 
 ![2023-12-23 20_47_41-](https://github.com/Marx-wrld/Real-Estate/assets/105711066/3384c42e-1060-4202-8f44-51d9cac9b9f0)
 
-#### Libraries used
+#### Libraries used :-
 - Building the project 
 ```
 npm create vite@latest client
