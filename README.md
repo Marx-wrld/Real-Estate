@@ -3,6 +3,9 @@ A real estate application built in React.js(UI), redux, Firebase, MERN stack and
 
 It allow users to search for properties based on various criteria, such as location, price, and a number of bedrooms. Users can typically browse listings, view photos, and contact agents or brokers to schedule viewings.
 
+![2023-12-23 20_38_35-](https://github.com/Marx-wrld/Real-Estate/assets/105711066/871fd9de-953e-4b67-aecc-3fb0d696d7b4)
+
+
 
 - Cloning the project 
 ```
