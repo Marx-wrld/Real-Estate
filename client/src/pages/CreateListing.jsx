@@ -7,30 +7,48 @@ import { ref } from 'firebase/storage';
 const CreateListing = () => {
     const [isChecked, setChecked] = useState(true);
     const handleCheckboxChange = () => {
-    setChecked(!isChecked); // Toggle the checkbox state
+    setChecked(!isChecked); //Toggle the checkbox state
     };
     const [files, setFiles] = useState([]);
     const [formData, setFormData] = useState({
         imageUrls: [],
     });
+    const [uploading, setUploading] = useState(false); //To show a loading spinner when uploading images
     const [imageUploadError, setImageUploadError] = useState(false);
+    const isImageFileValid = (file) => {
+        const allowedExtensions = ['.jpg', '.jpeg', '.png'];
+        const extension = file.name.slice(((file.name.lastIndexOf(".") - 1) >>> 0) + 2);
+
+        return allowedExtensions.includes(`.${extension.toLowerCase()}`);
+    }
     const handleImageSubmit = () => {
         if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
+            setUploading(true);
+            setImageUploadError(false);
             const promises = []; //Uploading more than one image hence promises
 
             for (let i = 0; i < files.length; i++) {
-                promises.push(storeImage(files[i]));
+                if (isImageFileValid(files[i])) {
+                    promises.push(storeImage(files[i]));
+                } else {
+                    setImageUploadError('Invalid file type!');
+                    setUploading(false);
+                    return; // Exit the loop and function
+                }
             }
             Promise.all(promises).then((urls) => {
                 setFormData({ ...formData, imageUrls: formData.imageUrls.concat(urls) }); //helps to keep the previous images and only add new urls to previous
                 setImageUploadError(false);
+                setUploading(false); //When all images are uploaded successfully
             }).catch((err) => {
                 console.log(err);
                 setImageUploadError('Image upload failed. Please try again!');
+                setUploading(false); //incase of an error
 
             });
         } else {
             setImageUploadError('You can only upload 6 images max. per listing!');
+            setUploading(false); //other errors
         }
     }
 
@@ -148,7 +166,7 @@ const CreateListing = () => {
                     </p>
                     <div className="flex gap-4">
                         <input onChange={(e) => setFiles(e.target.files)} className="p-3 border border-gray-300 rounded w-full" type="file" id="images" accept="image/*" multiple />
-                        <button type='button' onClick={handleImageSubmit} className="p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80">Upload</button>
+                        <button disabled={uploading} type='button' onClick={handleImageSubmit} className="p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80">{uploading ? 'uploading...' : 'Upload'}</button>
                     </div>
                     <p className='text-red-600'>{imageUploadError && imageUploadError}</p>
                     {
