@@ -1,4 +1,3 @@
-import { response } from 'express';
 import Listing from '../models/listing.model.js';
 import { errorHandler } from '../utils/error.js';
 
@@ -16,10 +15,10 @@ export const deleteListing = async (req, res, next) => {
     const listing = await Listing.findById(req.params.id);
 
     if(!listing){
-        return next(errorHandler('Listing not found', 404));
+        return next(errorHandler('Listing not found!', 404));
     }
     if(req.user.id !== listing.userRef.toString()){
-        return next(errorHandler('Not authorized', 401));
+        return next(errorHandler('Not authorized!', 401));
     }
 
     try {
@@ -29,3 +28,33 @@ export const deleteListing = async (req, res, next) => {
         next(error)
     }
 };
+
+export const updateListing = async (req, res, next) => {
+    const listing = await Listing.findById(req.params.id);
+
+    if(!listing){
+        return next(errorHandler('Listing not found!', 404));
+    }
+    if(req.user.id !== listing.userRef.toString()){
+        return next(errorHandler('Not authorized!', 401));
+    }
+
+    try {
+        const updatedListing = await Listing.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+        res.status(200).json(updatedListing);
+    } catch (error) {
+        next(error)
+    }
+};
+
+export const getListing = async (req, res, next) => {
+    try {
+        const listing = await Listing.findById(req.params.id);
+        if (!listing) {
+            return next(errorHandler('Listing not found!', 404));
+        }
+        res.status(200).json(listing);
+    } catch (error) {
+        next(error);
+    }
+}
