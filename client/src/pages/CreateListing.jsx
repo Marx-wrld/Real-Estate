@@ -4,10 +4,12 @@ import { app } from '../firebase';
 import { getDownloadURL } from 'firebase/storage';
 import { ref } from 'firebase/storage';
 import { useSelector } from 'react-redux';
+import {useNavigate} from 'react-router-dom';
 
 const CreateListing = () => {
     const { currentUser } = useSelector(state => state.user)
     const [files, setFiles] = useState([]);
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         imageUrls: [],
         name: '',
@@ -132,7 +134,7 @@ const CreateListing = () => {
             if (+formData.regularPrice < +formData.discountPrice) return setError('Discount price must be lower than regular price!'); //using + to convert the string to number, to avoid errors
             setLoading(true);
             setError(false);
-            const res = await fetch('/api/listings/create', {
+            const res = await fetch('/api/listing/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -147,6 +149,7 @@ const CreateListing = () => {
             if (data.success === false) {
                 setError(data.message);
             }
+            navigate(`/listing/${data._id}`);
         } catch (error) {
             setError(error.message);
             setLoading(false);
