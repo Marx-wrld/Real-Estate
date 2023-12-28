@@ -1,7 +1,7 @@
 # Real-Estate
-A real estate application built in React.js(UI), redux, Firebase, MERN stack and tailwind.
+A real estate application built in React.js(UI), redux, Firebase, MERN stack, and tailwind.
 
-It allow users to search for properties based on various criteria, such as location, price, and a number of bedrooms. Users can typically browse listings, view photos, and contact agents or brokers to schedule viewings.
+It allows users to search for properties based on various criteria, such as location, price, and number of bedrooms. Users can typically browse listings, view photos, and contact agents or brokers to schedule viewings.
 
 ![2023-12-23 20_38_35-](https://github.com/Marx-wrld/Real-Estate/assets/105711066/871fd9de-953e-4b67-aecc-3fb0d696d7b4)
 
@@ -11,7 +11,7 @@ It allow users to search for properties based on various criteria, such as locat
 
 ![2023-12-28 15_12_49-](https://github.com/Marx-wrld/Real-Estate/assets/105711066/7f2e9671-07f1-4b64-bc41-062dda9812dc)
 
-### Libraries used :-
+### Libraries used:-
 - Building the project 
 ```
 npm create vite@latest client
