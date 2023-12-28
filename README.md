@@ -9,6 +9,8 @@ It allow users to search for properties based on various criteria, such as locat
 
 ![2023-12-28 15_11_32-](https://github.com/Marx-wrld/Real-Estate/assets/105711066/412e7326-a543-46a6-a61e-18ef911ae8de)
 
+![2023-12-28 15_12_49-](https://github.com/Marx-wrld/Real-Estate/assets/105711066/7f2e9671-07f1-4b64-bc41-062dda9812dc)
+
 ### Libraries used :-
 - Building the project 
 ```
