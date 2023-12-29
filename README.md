@@ -13,6 +13,7 @@ It allows users to search for properties based on various criteria, such as loca
 
 ![2023-12-29 14_22_57-](https://github.com/Marx-wrld/Real-Estate/assets/105711066/56575cce-6d6b-4e14-ac61-29c17b9877d2)
 
+![2023-12-29 14_21_53-](https://github.com/Marx-wrld/Real-Estate/assets/105711066/06864913-e297-4009-acad-a4d83a93728e)
 
 
 ### Libraries used:-
