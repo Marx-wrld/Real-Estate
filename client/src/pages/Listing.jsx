@@ -13,6 +13,8 @@ import {
     FaParking,
     FaShare,
   } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import Contact from "../components/Contact";
 
 
 const Listing = () => {
@@ -22,8 +24,9 @@ const Listing = () => {
   const [error, setError] = useState(false);
   const params = useParams();
   const [copied, setCopied] = useState(false);
-  // const [contact, setContact] = useState(false);
-  useEffect(() => {
+  const {currentUser} = useSelector((state) => state.user);
+  const [contact, setContact] = useState(false);
+  useEffect(() => { // prevents the useEffect from running on every render
     const fetchListing = async () => {
       try {
         setLoading(true);
@@ -44,6 +47,8 @@ const Listing = () => {
     }
     fetchListing()
   }, [params.listingId]);
+
+  
   return (
     <main>
       {loading && <p className="text-center my-7 text-2xl">Loading...</p>}
@@ -124,7 +129,7 @@ const Listing = () => {
                 {listing.furnished ? 'Furnished' : 'Unfurnished'}
               </li>
             </ul>
-            {/* {currentUser && listing.userRef !== currentUser._id && !contact && (
+            {currentUser && listing.userRef !== currentUser._id && !contact && ( // if there is a current user and the listing user is not the current user and contact is false, then show the contact button
               <button
                 onClick={() => setContact(true)}
                 className='bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 p-3'
@@ -132,7 +137,8 @@ const Listing = () => {
                 Contact landlord
               </button>
             )}
-            {contact && <Contact listing={listing} />} */}
+            {contact && <Contact listing={listing} />} 
+            {/* Sending the listing as a prop to the Contact component  */}
             </div>
         </>
       )}
