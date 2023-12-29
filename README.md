@@ -95,3 +95,7 @@ request.resource.contentType.matches('image/.*')
 ```
 npm i cookie-parser
 ```
+#### Installing react swiper, a modern touch slider for web apps 
+```
+npm i swiper
+```
