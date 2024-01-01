@@ -45,7 +45,7 @@ const Listing = () => {
           setLoading(false);
       } 
     }
-    fetchListing()
+    fetchListing();
   }, [params.listingId]);
 
   
