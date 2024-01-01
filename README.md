@@ -104,7 +104,7 @@ npm i cookie-parser
 ```
 npm i swiper
 ```
-#### Installing tailwindcss line clamp for truncating text after a fixed number of lines
+#### Installing tailwindcss line-clamp for truncating text after a fixed number of lines
 ```
 npm install -D @tailwindcss/line-clamp
 ```
