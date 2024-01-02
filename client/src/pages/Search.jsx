@@ -15,6 +15,7 @@ const Search = () => {
     });
     const [loading, setLoading] = useState(false);
     const [listings, setListings] = useState([]);
+    const [showMore, setShowMore] = useState(false);
 
     useEffect(() => {
         const urlParams = new URLSearchParams(location.search);
@@ -46,9 +47,15 @@ const Search = () => {
 
         const fetchListings = async () => {
             setLoading(true);
+            setShowMore(false);
             const searchQuery = urlParams.toString();
             const res = await fetch(`/api/listing/get?${searchQuery}`);
             const data = await res.json();
+            if(data.length > 8) {
+                setShowMore(true);
+            } else {
+                setShowMore(false);
+            }
             setListings(data);
             setLoading(false);
         };
@@ -86,6 +93,22 @@ const Search = () => {
         const searchQuery = urlParams.toString(); // converting the params to a string
         navigate(`/search?${searchQuery}`);
     };
+
+    const onShowMoreClick = async () => {
+
+        const numberOfListings = listings.length; // number of listings currently on the page
+        const startIndex = numberOfListings; // start index of the next page of listings
+        const urlParams = new URLSearchParams(location.search); // search parameters from the url
+        urlParams.set('startIndex', startIndex); // set start index to the next page of listings
+        const searchQuery = urlParams.toString(); // search query string
+        const res = await fetch(`/api/listing/get?${searchQuery}`); // fetch the next page of listings
+        const data = await res.json(); // convert the response to json
+        if (data.length < 9) { // if there are less than 9 listings, then there are no more listings to show
+          setShowMore(false);
+        }
+        setListings([...listings, ...data]); // update the listings state
+
+      };
 
   return (
     <div className="flex flex-col md:flex-row">
@@ -159,6 +182,11 @@ const Search = () => {
                         <ListingItem key={listing._id} listing={listing} />
                     ))
                 }
+                {showMore && (
+                    <button onClick={onShowMoreClick} className="text-green-700 hover:underline p-7 text-center w-full">
+                        Show More
+                    </button>
+                )}
             </div>
         </div>
     </div>

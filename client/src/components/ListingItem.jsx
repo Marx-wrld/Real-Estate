@@ -26,7 +26,7 @@ const ListingItem = ({listing}) => {
             </div>
             <div className='font-bold text-xs flex items-center'>
               <FaBath className='text-lg mr-1' />
-              {listing.bathrooms > 1 ? `${listing.bathrooms} beds ` : `${listing.bedrooms} bath `}
+              {listing.bathrooms > 1 ? `${listing.bathrooms} baths ` : `${listing.bathrooms} bath `}
             </div>
           </div>
         </div>
