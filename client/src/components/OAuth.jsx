@@ -2,7 +2,7 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import  { app } from "../firebase";
 import { useDispatch }  from 'react-redux';
 import { signInSuccess } from '../redux/user/userSlice';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
 
 const OAuth = () => {
   const dispatch = useDispatch(); //Frontend
@@ -10,6 +10,8 @@ const OAuth = () => {
     const handleGoogleClick = async () => {
         try {
             const provider = new GoogleAuthProvider()
+            provider.setCustomParameters({ prompt: 'select_account' }); //This custom parameter enables Google Auth to always popup when the button is clicked even when only one user is signed in. It allows the user select the account on the pop up before creating a new user or signing in an existing user.
+
             const auth = getAuth(app)
 
             const result = await signInWithPopup(auth, provider)

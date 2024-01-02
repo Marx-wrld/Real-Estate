@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 body {
-    background-color: rgb(241, 232, 232);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(255, 253, 253);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

@@ -26,6 +26,7 @@ const Listing = () => {
   const [copied, setCopied] = useState(false);
   const {currentUser} = useSelector((state) => state.user);
   const [contact, setContact] = useState(false);
+  
   useEffect(() => { // prevents the useEffect from running on every render
     const fetchListing = async () => {
       try {
