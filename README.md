@@ -1,9 +1,7 @@
 # Real-Estate
 A real estate web application built in React.js(UI), redux, Firebase, MongoDB, and tailwind.
 
-```
-Link to the app - https://kana-estate.onrender.com/
-```
+- Link to the app - https://kana-estate.onrender.com/
 
 It allows users to search for properties based on various criteria, such as location, price, and number of bedrooms. Users can typically browse listings, view photos, and contact agents or brokers to schedule viewings.
 
