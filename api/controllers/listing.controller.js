@@ -3,11 +3,19 @@ import { errorHandler } from '../utils/error.js';
 
 export const createListing = async (req, res, next) => {
     try {
+        console.log('Incoming request body:', req.body);
         //creating the model for listing and adding the rules to our app
         const listing = await Listing.create(req.body);
+        console.log('Listing created successfully:', listing);
         return res.status(201).json(listing);
     } catch (error) {
-        next(error)
+        if (error.name === 'ValidationError') {
+            // Handle Mongoose validation errors
+            console.error('Validation error:', error.message);
+            return res.status(400).json({ success: false, message: error.message });
+        }
+        console.error('Error creating listing:', error);
+        next(error);
     }
 };
 
@@ -61,6 +69,7 @@ export const getListing = async (req, res, next) => {
 
 export const getListings = async (req, res, next) => {
     try {
+        console.log('Incoming request to get listings:', req.query);
         const limit = parseInt(req.query.limit) || 9;
         const startIndex = parseInt(req.query.startIndex) || 0;
 
@@ -87,7 +96,7 @@ export const getListings = async (req, res, next) => {
         let type = req.query.type;
 
         if (type === undefined || type === 'all') {
-            type = { $in: [sale, rent]}
+            type = { $in: ['sale', 'rent']}
         }
 
         const searchTerm = req.query.searchTerm || '';
@@ -106,10 +115,12 @@ export const getListings = async (req, res, next) => {
         }).sort(
             {[sort]: order} //sorting by ascending/descending order
         ).limit(limit).skip(startIndex); //limiting the number of listings to 9 per page
+        console.log('Listings fetched successfully:', listings);
 
         return res.status(200).json(listings);
 
     } catch (error) {
+        console.error('Error fetching listings:', error);
         next(error);
     }
 };
