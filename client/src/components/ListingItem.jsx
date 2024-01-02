@@ -7,7 +7,7 @@ const ListingItem = ({listing}) => {
   return (
     <div className="bg-white shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full sm:w-[330px]">
       <Link to={`/listing/${listing._id}`}>
-        <img src={listing.imageUrls[0] || "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftechmoran.com%2F2023%2F04%2F13%2Fthe-ultimate-guide-to-real-estate%2F&psig=AOvVaw379a6c8gjxQw4nHOpFRYDX&ust=1704224262023000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNDSqsamvIMDFQAAAAAdAAAAABAI"} alt="listing cover" className='h-[320px] sm:h-[220px] w-full object-cover hover:scale-105 transition-scale duration-300' />
+        <img src={listing.imageUrls[0] || "https://s.yimg.com/ny/api/res/1.2/YreAoN_qV1rbTuIERAYIqA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://media.zenfs.com/en/Benzinga/a973cd6c9739c8ac5e25f67ecc3e9e58"} alt="listing cover" className='h-[320px] sm:h-[220px] w-full object-cover hover:scale-105 transition-scale duration-300' />
         <div className='p-3 flex flex-col gap-2 w-full'>
           <p className='text-lg font-semibold text-slate-700 truncate'>{listing.name}</p>
           <div className='flex items-center gap-1'>
