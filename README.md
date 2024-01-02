@@ -7,7 +7,9 @@ It allows users to search for properties based on various criteria, such as loca
 
 - Tutorial on how the app works ⬇️ 
 
+
 https://github.com/Marx-wrld/Real-Estate/assets/105711066/e7520977-dbf0-4761-b640-86b5e05d7264
+
 
 ![2023-12-23 20_38_35-](https://github.com/Marx-wrld/Real-Estate/assets/105711066/871fd9de-953e-4b67-aecc-3fb0d696d7b4)
 
