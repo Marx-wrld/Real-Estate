@@ -1,5 +1,5 @@
 # Real-Estate
-A real estate web application built in React.js(UI), redux, Firebase, JWT, MongoDB, and tailwind.
+A real estate web application built in React.js(UI), redux, Firebase, JWT, MongoDB, and tailwind-css.
 
 - Link to the app - https://kana-estate.onrender.com/
 
